@@ -1,0 +1,22 @@
+{
+  "name": "send_telegram_cli",
+  "version": "1.0.0",
+  "description": "Send telegram messages from the terminal easily with Node",
+  "main": "index.js",
+  "author": "Paco Alba <kiviev@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiviev/sendTelegramCLI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kiviev/sendTelegramCLI/issues"
+  },
+  "homepage": "https://github.com/kiviev/sendTelegramCLI#readme",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "8.0.0",
+    "fs-extra": "8.0.0",
+    "request": "2.88.0",
+    "yargs": "13.2.2"
+  }
+}
