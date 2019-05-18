@@ -4,19 +4,23 @@ const fs = require('fs-extra');
 class SendTG {
 
   static getUrl(){
+    if (!process.env.TG_TOKEN) {
+      console.error('No se ha encontrado el token');
+      return false;
+    }
     return "https://api.telegram.org/bot" + process.env.TG_TOKEN + "/";
   }
 
   static async getChatId(type , chat_id){
-
+    let uri = SendTG.getUrl();
     let options = {
       headers: {
         'content-type': 'multipart/form-data'
       },
-      url: SendTG.getUrl() + "getUpdates",
+      url: uri ? uri + "getUpdates" : false,
       json: true
     };
-
+    if(!options.url) return false;
     return new Promise((resolve, reject) => {
       request.post(options, (error, response, body) => {
         if (error) reject(error);
